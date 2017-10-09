@@ -1,16 +1,13 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <cricketer-filter
-     @country_change='countryChange'
-    ></cricketer-filter>
+  <div>
+    <h1 class="title">{{ msg }}</h1>
     <ol>
-      <li v-for='(c, index) in filteredCricketers'>
+      <li v-for='(c, index) in cricketers'>
         <cricketer-card :index='index' :cricketer='c'></cricketer-card>
       </li>
     </ol>
     <cricketer-input
-      @add_cricketer='addCricketer'
+      @add-cricketer='addCricketer'
     ></cricketer-input>
   </div>
 </template>
@@ -18,13 +15,12 @@
 <script>
 import CricketerCard from './CricketerCard';
 import CricketerInput from './CricketerInput';
-import CricketerFilter from './CricketerFilter';
 
 export default {
   name: 'hello',
   data() {
     return {
-      msg: `All Cricketers' List`,
+      msg: `All Cricketers`,
       countryFilter: 'All',
       cricketers: [
         { name: 'Virat Kohli', team: 'India', picture: 'http://p.imgci.com/db/PICTURES/CMS/263600/263697.20.jpg' },
@@ -35,23 +31,11 @@ export default {
   methods: {
     addCricketer(cricketer) {
       this.cricketers.push(cricketer);
-    },
-    countryChange(country) {
-      this.countryFilter = country;
     }
   },
   components: {
     'cricketer-card': CricketerCard,
-    'cricketer-input': CricketerInput,
-    'cricketer-filter': CricketerFilter
-  },
-  computed: {
-    filteredCricketers() {
-      if (this.countryFilter !== 'All') {
-        return this.cricketers.filter(cricketer => cricketer.team === this.countryFilter);
-      }
-      return this.cricketers;
-    }
+    'cricketer-input': CricketerInput
   }
 };
 </script>

@@ -2,8 +2,8 @@
     <div :index='index' class='cricketer-card'>
         <img v-bind:src='cricketer.picture' height=98 width=80 />
         <div class="cricketer-info">
-            <span>{{cricketer.name}}</span>
-            <span>{{cricketer.team}}</span>
+            <span class="cricketer-name">{{cricketer.name}}</span>
+            <span class="cricketer-team">{{cricketer.team}}</span>
         </div>
     </div>
 </template>

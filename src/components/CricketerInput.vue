@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     onAddCricketer() {
-      this.$emit('add_cricketer', { name: this.cricName, team: this.cricTeam, picture: this.cricPic });
+      this.$emit('add-cricketer', { name: this.cricName, team: this.cricTeam, picture: this.cricPic });
       this.cricName = '';
       this.cricTeam = '';
       this.cricPic = '';
