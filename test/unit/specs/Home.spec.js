@@ -2,6 +2,7 @@ import { mount } from 'avoriaz';
 import Home from '@/components/Home';
 import CricketerCard from '@/components/CricketerCard';
 import CricketerInput from '@/components/CricketerInput';
+import AppNavigation from '@/components/AppNavigation';
 
 describe('Home.vue', () => {
   let wrapper;
@@ -11,9 +12,9 @@ describe('Home.vue', () => {
   });
 
   describe('render', () => {
-    it('should set title', () => {
-      const title = wrapper.find('.title')[0];
-      expect(title.text()).to.contain('All Cricketers');
+    it('should render navigation bar', () => {
+      const appNavigation = wrapper.find(AppNavigation);
+      expect(appNavigation.length).to.equal(1);
     });
 
     it('should render cricketer card', () => {
