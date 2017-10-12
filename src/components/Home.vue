@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">{{ msg }}</h1>
+    <app-navigation />
     <ol>
       <li v-for='(c, index) in cricketers'>
         <cricketer-card :index='index' :cricketer='c'></cricketer-card>
@@ -15,12 +15,12 @@
 <script>
 import CricketerCard from './CricketerCard';
 import CricketerInput from './CricketerInput';
+import AppNavigation from './AppNavigation';
 
 export default {
   name: 'hello',
   data() {
     return {
-      msg: `All Cricketers`,
       countryFilter: 'All',
       cricketers: [
         { name: 'Virat Kohli', team: 'India', picture: 'http://p.imgci.com/db/PICTURES/CMS/263600/263697.20.jpg' },
@@ -35,7 +35,8 @@ export default {
   },
   components: {
     'cricketer-card': CricketerCard,
-    'cricketer-input': CricketerInput
+    'cricketer-input': CricketerInput,
+    'app-navigation': AppNavigation
   }
 };
 </script>
