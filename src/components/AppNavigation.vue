@@ -1,7 +1,13 @@
 <template>
-  <b-navbar type="dark" variant="info">
-      <b-navbar-brand href="#">Cricket List</b-navbar-brand>
-  </b-navbar>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+      <button class="button navbar-burger">
+        <span>Item 1</span>
+        <span>Item 2</span>
+        <span>Item 3</span>
+      </button>
+    </div>
+  </nav>
 </template>
 
 <script>
